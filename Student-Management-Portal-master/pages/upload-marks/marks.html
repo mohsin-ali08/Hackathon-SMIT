@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Student Marks</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+      background: #000 !important;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url(../../utlis/images/uploadmarks.jpg) !important;
+      background-size: cover !important;
+      background-position: center !important; /* Center the image */
+      background-repeat: no-repeat !important;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px) !important;
+      min-height: 100vh;
+     
+    }
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
+<body>
+ 
+<!-- Navbar -->
+<nav class="bg-white bg-opacity-30 border-gray-300 backdrop-filter backdrop-blur-lg rounded px-6 py-4 border-b">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-2xl font-bold text-white">Student Marks from</a>
+    <!-- Mobile Menu Button -->
+    <button
+      class="block md:hidden text-white focus:outline-none"
+      onclick="toggleMenu()"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+    <!-- Links -->
+    <div class="hidden md:flex space-x-4">
+      <a href="../../../index.html" class="text-xl font-semibold text-white hover:text-gray-300">Home</a>
+      <a href="../admin-pannel/admin.html" class="text-white text-xl hover:text-gray-300 font-semibold">Student's list</a>
+      <a href="#" class="text-white hover:text-gray-300 text-xl font-semibold">Contact</a>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden text-center text-white transition-all duration-300 ease-in-out"
+  >
+    <a href="../../../index.html" class="block text-white hover:text-gray-300 px-4 py-2">Home</a>
+    <a href="../admin-pannel/admin.html" class="block text-white hover:text-gray-300 px-4 py-2">Student's list</a>
+    <a href="#" class="block border-b text-white hover:text-gray-300 px-4 py-2">Contact</a>
+  </div>
+</nav>
+
+
+
+
+
+    <div class="px-4 py-3">
+        <div class="mx-auto my-5 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border rounded-lg p-8 max-w-md w-full">
+            <h2 class="text-2xl font-bold text-center text-white mb-6">Upload Student Marks</h2>
+
+            <form id="uploadMarksForm" class="space-y-4">
+                <div>
+                    <label for="cnic" class="block text-white text-sm font-bold mb-2">Student CNIC:</label>
+                    <input type="text" placeholder="CNIC" id="cnic"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none"
+                        required>
+                </div>
+
+                <div>
+                    <label for="course" class="block text-white text-sm font-bold mb-2">Course:</label>
+                    <input type="text" placeholder="student course" id="course"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none"
+                        required>
+                </div>
+
+                <div>
+                    <label for="marks" class="block text-white text-sm font-bold mb-2">Marks:</label>
+                    <input type="number" placeholder="student marks" id="marks"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none"
+                        required>
+                </div>
+
+                <div>
+                    <label for="totalMarks" class="block text-white text-sm font-bold mb-2">Total Marks:</label>
+                    <input type="number" placeholder="totalMarks" id="totalMarks"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none"
+                        required>
+                </div>
+
+                <div>
+                    <label for="grade" class="block text-white text-sm font-bold mb-2">Grade:</label>
+                    <input type="text" placeholder="Student Grade" id="grade"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none mb-3"
+                        required>
+                </div>
+
+               
+                    <button type="submit"
+                        class="bg-green-600 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded focus:outline-none w-full  focus:shadow-outline">
+                        Upload Marks
+                    </button>
+               
+            </form>
+        </div>
+    </div>
+    <!-- Add this inside your form or wherever appropriate -->
+    <div id="loading" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="text-white text-xl">Uploading... <span class="loader"></span></div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+    </script>
+
+    <script src="./marks.js" type="module"></script>
+</body>
+
+</html>

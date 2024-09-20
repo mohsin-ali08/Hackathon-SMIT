@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+     body {
+      background: #000 !important;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url(../../../utlis/images/wallpaperflare.com_wallpaper\ \(1\).jpg) !important;
+      background-size: cover !important;
+      background-position: center !important; /* Center the image */
+      background-repeat: no-repeat !important;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px) !important;
+      min-height: 100vh;
+    }
+</style>
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-white bg-opacity-20 border-gray-300 backdrop-filter backdrop-blur-lg rounded px-6 p-3 border-b">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-white">EduTrack</a>
+        <!-- Mobile Menu Button -->
+        <button
+          class="block md:hidden text-white focus:outline-none"
+          onclick="toggleMenu()"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+        <!-- Links -->
+        <div class="hidden md:flex space-x-4">
+          <a href="../../../index.html" class="text-white text-xl hover:text-gray-300">Home</a>
+          <a href="#" class="text-white text-xl hover:text-gray-300">About</a>
+          <a href="#" class="text-white text-xl hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden text-center text-white transition-all duration-300 ease-in-out"
+      >
+        <a href="../../../index.html" class="block text-white text-xl hover:text-gray-300 px-4 py-2">Home</a>
+        <a href="#" class="block text-white text-xl hover:text-gray-300 px-4 py-2">About</a>
+        <a href="#" class="block border-b text-white text-xl hover:text-gray-300 px-4 py-2">Contact</a>
+      </div>
+    </nav>
+  
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+    </script>
+  </body>
+  </html>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="px-4 py-10 h-lg">
+    <div class="mx-auto my-5 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border rounded-lg p-8 max-w-md w-full">
+        <h2 class="text-3xl font-bold mb-6 text-center text-white">Login</h2>
+        <form>
+            <div class="mb-4">
+                <label class="block text-white text-sm font-bold mb-2" for="email">
+                    Email
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Enter your Email">
+            </div>
+            <div class="mb-6">
+                <label class="block text-white text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter your password">
+              
+            </div>
+            <button
+            type="button"
+            class="w-full bg-green-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 transition-colors"
+            onclick="loginUser()"
+          >
+            Login
+          </button>
+          <p class="text-gray-300 mt-6 text-center">
+            Don't have an account?
+            <a href="#" class="text-blue-500 hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </form>
+    </div>
+</section>
+    
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
